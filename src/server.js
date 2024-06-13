@@ -13,3 +13,8 @@ const taskRoutes = require('./routes/taskRoutes');
 
 //Use Routes
 app.use('/api/tasks', taskRoutes);
+
+//Catch-all to server index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
