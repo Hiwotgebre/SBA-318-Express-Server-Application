@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="row">
+                <div class="col">
+                    <h1>Task Planner</h1>
+                </div>
+            </div>
+            <div id="error"></div>
+            <div class="row">
+                <div class="col">
+                    <form  id="newTaskForm">
+                        <div class="form-group row">
+                            <label for="newTaskNameInput" class="col-md-2 col-form-label">Name</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="newTaskNameInput">
+                                <!-- <small class="error">Please provide task name</small> -->
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="newTaskAssignedTo" class="col-md-2 col-form">Assigned To</label>
+                            <div class="col-md-4">
+                                <select id="newTaskAssignedTo" class="form-control">
+                                    <option value="hiwot" id="newTaskAssignedTo">Hiwot</option>
+                                    <option value="ella" id="newTaskAssignedTo">Ella</option>
+                                    <option value="merry" id="newTaskAssignedTo">Marry</option>
+                                    <option value="kate" id="newTaskAssignedTo">Kate</option>
+                                </select>
+                                <!-- <small class="error">Please provide task name</small> -->
+                            </div>
+                            <label for="newTaskDueDate" class="col-md-2 col-form-label">Due Date</label>
+                            <div class="col-md-4">
+                                <input type="date" data-date-format="dd/mm/yyyy" id="newTaskDueDate" class="form-control">
+                                <!-- <small class="error">Please provide task name</small> -->
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="newStatus" class="col-md-2 col-form-label">Status</label>
+                            <div class="col-md-4">
+                                <select  id="newStatus" class="form-control">
+                                    <option value="TODO" id="newStatus">TODO</option>
+                                    <option value="IN PROGRESS" id="newStatus">IN PROGRESS</option>
+                                    <option value="REVIEW" id="newStatus">REVIEW</option>
+                                    <option value="DONE" id="newStatus">DONE</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="submit" class="btn btn-primary"></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="card-wrapper">
+        <div class="row">
+            <div class="col">
+                <h1>Task Lists</h1>
+            </div>
+        </div>
+        <div class="row" id="tasksCard"></div>
+    </div>
+</body>
+</html>
