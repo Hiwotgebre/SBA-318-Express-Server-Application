@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Task List</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="row">
+                <div class="col">
+                    <h1>Task Planner</h1>
+                </div>
+            </div>
+            <div id="error"></div>
+            <div class="row">
+                <div class="col">
+                    <form  id="newTaskForm">
+                        <div class="form-group row">
+                            <label for="newTaskNameInput" class="col-md-2 col-form-label">Name</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="newTaskNameInput">
+                                <!-- <small class="error">Please provide task name</small> -->
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="newTaskAssignedTo" class="col-md-2 col-form">Assigned To</label>
+                            <div class="col-md-4">
+                                <select id="newTaskAssignedTo" class="form-control">
+                                    <option value="hiwot" id="newTaskAssignedTo">Hiwot</option>
+                                    <option value="ella" id="newTaskAssignedTo">Ella</option>
+                                    <option value="merry" id="newTaskAssignedTo">Marry</option>
+                                    <option value="kate" id="newTaskAssignedTo">Kate</option>
+                                </select>
+                                <!-- <small class="error">Please provide task name</small> -->
+                            </div>
+                            <label for="newTaskDueDate" class="col-md-2 col-form-label">Due Date</label>
+                            <div class="col-md-4">
+                                <input type="date" data-date-format="dd/mm/yyyy" id="newTaskDueDate" class="form-control">
+                                <!-- <small class="error">Please provide task name</small> -->
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="newStatus" class="col-md-2 col-form-label">Status</label>
+                            <div class="col-md-4">
+                                <select  id="newStatus" class="form-control">
+                                    <option value="TODO" id="newStatus">TODO</option>
+                                    <option value="IN PROGRESS" id="newStatus">IN PROGRESS</option>
+                                    <option value="REVIEW" id="newStatus">REVIEW</option>
+                                    <option value="DONE" id="newStatus">DONE</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="submit" class="btn btn-primary">Add Task</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="card-wrapper">
+        <div class="row">
+            <div class="col">
+                <h1>Task Lists</h1>
+            </div>
+        </div>
+        <div class="row" id="tasksCard"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  
+    <script src="js/TaskManager.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
