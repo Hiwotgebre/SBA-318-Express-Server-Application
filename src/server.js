@@ -10,3 +10,6 @@ app.use(express.unlencoded({ extended: true}));
 
 //Import routes
 const taskRoutes = require('./routes/taskRoutes');
+
+//Use Routes
+app.use('/api/tasks', taskRoutes);
