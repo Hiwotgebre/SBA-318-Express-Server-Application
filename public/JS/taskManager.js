@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const newTaskForm = document.getElementById('newTaskForm');
   const errorElement = document.getElementById('error');
@@ -93,3 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
       renderTasks();
   }
 });
+
+
+

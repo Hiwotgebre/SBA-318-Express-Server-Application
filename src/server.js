@@ -3,23 +3,26 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-//Middleware to parase Json and url-encoded form data
+// Middleware to serve static files
 app.use(express.static(path.join(__dirname, '..', 'public')));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
 
-//Import routes
-const taskRoutes = require('./routes/taskRoutes');
+// Custom Logging Middleware
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} request to ${req.url}`);
+    next();
+});
 
-//Use Routes
-app.use('/api/tasks', taskRoutes);
+// Error Handling Middleware
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).send('Something broke!');
+});
 
-//Catch-all to server index.html
+// Routes
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
-//Start the server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
